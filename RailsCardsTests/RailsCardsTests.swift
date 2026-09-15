@@ -1,19 +1,24 @@
-//
-//  RailsCardsTests.swift
-//  RailsCardsTests
-//
-//  Created by RK on 15/09/2026.
-//
-
 import Testing
 @testable import RailsCards
 
-struct RailsCardsTests {
+struct DeckTests {
 
-    @Test func example() async throws {
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
-        // Swift Testing Documentation
-        // https://developer.apple.com/documentation/testing
+    @Test func deckHasCards() {
+        let deck = Deck()
+        #expect(deck.cards.count == 22)
     }
 
+    @Test func cardsHaveCommandsAndDefinitions() {
+        let deck = Deck()
+        for card in deck.cards {
+            #expect(!card.command.isEmpty)
+            #expect(!card.definition.isEmpty)
+        }
+    }
+
+    @Test func drawRandomCardReturnsCardFromDeck() {
+        let deck = Deck()
+        let card = deck.drawRandomCard()
+        #expect(deck.cards.contains { $0.command == card.command })
+    }
 }
