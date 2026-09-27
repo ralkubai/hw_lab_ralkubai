@@ -4,9 +4,13 @@ struct BottomBar: View {
     @ObservedObject var viewModel: ViewModel
 
     var body: some View {
+        // Spacers between each button spread them evenly across the width.
         HStack {
             Spacer()
 
+            // Each button calls a ViewModel method, which publishes an option
+            // for the WebView's Coordinator to act on. The buttons never touch
+            // the web view themselves.
             Button(action: viewModel.goBack) {
                 Image(systemName: "chevron.left")
             }
@@ -37,7 +41,7 @@ struct BottomBar: View {
 
             Spacer()
         }
-        .font(.title3)
+        .font(.title3)          // applies to every icon in the stack
         .padding(.vertical, 8)
     }
 }
