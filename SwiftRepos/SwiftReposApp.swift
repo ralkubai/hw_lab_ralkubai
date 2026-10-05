@@ -2,7 +2,7 @@
 //  SwiftReposApp.swift
 //  SwiftRepos
 //
-//  Created by RK on 05/10/2026.
+//  App entry point.
 //
 
 import SwiftUI
@@ -11,7 +11,7 @@ import SwiftUI
 struct SwiftReposApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView()   // Root view of the app
         }
     }
 }
