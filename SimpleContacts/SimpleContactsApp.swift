@@ -2,16 +2,20 @@
 //  SimpleContactsApp.swift
 //  SimpleContacts
 //
-//  Created by RK on 18/10/2026.
+//  App entry point; sets up the SwiftData container.
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct SimpleContactsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AppView()   // Root view with the main navigation
         }
+        // Creates the persistence container for Person and injects
+        // its model context into the SwiftUI environment
+        .modelContainer(for: Person.self)
     }
 }
