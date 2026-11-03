@@ -2,16 +2,17 @@
 //  FindMyCarApp.swift
 //  FindMyCar
 //
-//  Created by RK on 03/11/2026.
+//  App entry point.
 //
 
 import SwiftUI
 
 @main
 struct FindMyCarApp: App {
+    /// The app's window, starting at AppView (renamed from ContentView).
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AppView()
         }
     }
 }
